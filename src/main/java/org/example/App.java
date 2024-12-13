@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.model.Item;
+import org.example.model.Passport;
 import org.example.model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,8 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        Configuration configuration = new Configuration().addAnnotatedClass(Person.class).addAnnotatedClass(Item.class);
+        Configuration configuration = new Configuration()
+                .addAnnotatedClass(Person.class).addAnnotatedClass(Passport.class);
 
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.getCurrentSession();
@@ -18,12 +19,12 @@ public class App {
         try {
             session.beginTransaction();
 
-            Person person = session.get(Person.class, 3);
-            System.out.println(person);
+            Person person = new Person("Test person", 40);
+            Passport passport = new Passport(person, 12345);
 
-            List<Item> items = person.getItems();
+            person.setPassport(passport);
 
-            System.out.println(items);
+            session.save(person);
 
             session.getTransaction().commit();
 
