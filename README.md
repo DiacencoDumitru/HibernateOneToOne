@@ -1,4 +1,4 @@
-* Hibernate-App, OneToMany
+* Hibernate OneToMany 
 * Работа с транзакциями
 
 ```postgresql
