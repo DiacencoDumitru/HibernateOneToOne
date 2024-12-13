@@ -1,8 +1,8 @@
-* Hibernate OneToOne
-* Работа с транзакциями
-* Каскадное сохранение с помощью save() на owning side
-* Hibernate в тразнакции достаточно сохранить сущности owning side что-бы сохранил и другую сущность: благодаря `@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)`
-* Owning side, это та часть сущности в которой не используется mappedBy
+## Hibernate OneToOne
+1. Работа с транзакциями
+2. Каскадное сохранение с помощью save() на owning side
+3. Hibernate в тразнакции достаточно сохранить сущности owning side что-бы сохранил и другую сущность: благодаря `@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)`
+4. Owning side, это та часть сущности в которой не используется mappedBy
 
 #### Первый способ (не удобоный)
 * Когда `id` ключ и первичный и внешний, это не удобно и надо наследоватся от Serializable
