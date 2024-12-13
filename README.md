@@ -5,7 +5,7 @@
 4. Owning side, это та часть сущности в которой не используется mappedBy
 
 #### Первый способ (не удобоный)
-* Когда `id` ключ и первичный и внешний, это не удобно и надо наследоватся от Serializable
+* Когда для Passport `person_id` это id ключ и первичный и внешний, это не удобно и надо наследоватся от Serializable
 ```postgresql
 CREATE TABLE Person (
     id SERIAL PRIMARY KEY,
